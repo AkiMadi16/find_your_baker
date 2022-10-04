@@ -32,7 +32,7 @@ function signUp(event) {
   const data = Object.fromEntries(new FormData(form))
   // console.log(data)
 
-  fetch('api/user', {
+  fetch('api/users', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
