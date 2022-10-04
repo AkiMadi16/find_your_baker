@@ -41,6 +41,6 @@ function signUp(event) {
   .then(userEmail => {
       console.log(userEmail)
       state.loggedInUserEmail = userEmail
-      renderRestaurantList()
+      renderBakerList()
   })
 }
