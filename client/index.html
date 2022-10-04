@@ -23,6 +23,7 @@
 </head>
 <body>
   <header class="container w-100">
+<<<<<<< HEAD
     <h1 class="text-center mt-2">Find Your Baker</h1>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -46,11 +47,36 @@
               </li>
             </ul>
           </div>
+=======
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand flex-grow-1 "  aria-current="page" onclick="renderBakerList()">Find Your Baker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" onclick="renderAddBaker()">Add Baker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="renderSignUp()">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="renderLogin()">Login</a>
+            </li><li class="nav-item">
+              <a class="nav-link" onclick="renderLogout()">Logout</a>
+            </li>
+          </ul>
+          <form class="d-inline-flex justify-content-end align-items-baseline" id="search">
+            <input class="form-control me-2" type="search" placeholder="Search by PostCode" aria-label="Search">
+            <button class="btn btn-outline" style='color: rgb(236, 218, 147);'type="submit">Search</button>
+          </form>
+>>>>>>> search bar
         </div>
-      </nav>
-    
+      </div>
     </nav>
-</header>
+  </header>
 <main id="page" class="content"></main>
 </body>
 </html>

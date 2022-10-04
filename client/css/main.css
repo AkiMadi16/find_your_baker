@@ -12,24 +12,31 @@ img {
   height: 180px;
   object-fit: cover;
 }
-form {
-  background-color: rgb(231, 193, 226);
+/* form {
+  background-color: rgb(245, 157, 155);
   border: 1px sollid darkgray;
   padding: 2rem 2rem;
   border-radius: 1rem;
-}
+} */
 button {
   margin-top: 1rem;
 }
 .card-group {
   gap:0.5rem;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  color: rgb(129, 95, 95);
 }
 a {
   text-decoration: none;
-  color:rgb(14, 78, 11);
+  color: rgb(129, 95, 95);
 }
 
 a:hover {
-  color:rgb(216, 255, 214);
+  color:rgb(236, 218, 147);
+}
+
+@media only screen and (max-width: 550px) {
+  body {
+    background-position-y: top;
+  }
 }
