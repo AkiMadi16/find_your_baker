@@ -1,9 +1,9 @@
 const state = {
   bakers: []
 }
-fetch('/api/bakes')
+fetch('/api/bakers')
   .then(res => res.json())
   .then(bakers => {
   state.bakers = bakers
-  renderBakersList()
+  renderBakerList()
 })
