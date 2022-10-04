@@ -27,20 +27,30 @@ function renderSignUp() {
 
 function signUp(event) {
   event.preventDefault()
-  const form = event.target
+  const form = event.target 
 
   const data = Object.fromEntries(new FormData(form))
-  // console.log(data)
 
-  fetch('api/users', {
-      method: 'POST',
+  fetch('/api/users', {
+      method: 'POST', 
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
+      body:JSON.stringify(data)
   })
-  .then(res => res.json())
-  .then(userEmail => {
-      console.log(userEmail)
-      state.loggedInUserEmail = userEmail
-      renderBakerList()
-  })
+      .then(res => res.json())
+      .then(res => {
+          if (res.error) {
+              renderSignUp()
+              renderError(res.error)
+          } else {
+              state.loggedInEmail = res.email
+              renderBakerList()
+          }     
+      })
+}
+
+function renderError(errorMessage) {
+  const page = document.querySelector('#page')
+  page.innerHTML =
+    `<h2 class ="text-center" style='color: red;'>${errorMessage}</h2>` +
+    page.innerHTML
 }
