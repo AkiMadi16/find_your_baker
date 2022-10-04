@@ -15,8 +15,23 @@ return state.bakers.map(baker => `
       <p class="card-text">${baker.address}</p>
       <p class="card-text"><small class="text-muted">${baker.specialty}</small></p>
       <a onClick = "deleteBaker(event)" class="card-link">Delete</a>
-      <a onClick = "renderUpdateRestaurant(${baker.id})" class="card-link">Update</a>
+      <a onClick = "renderUpdateBaker(${baker.id})" class="card-link">Update</a>
   </div>
 </div>
 `).join('')
 } 
+
+function deleteBaker(event) {
+  const deleteBtn = event.target;
+
+  const bakerDOM = deleteBtn.closest('.baker')
+  const bakerId = bakerDOM.dataset.id;
+ 
+  fetch(`/api/bakers/${bakerId}`, {
+    method: 'DELETE'
+  })
+    .then(() => {
+      state.bakers = state.bakers.filter(t => t.id != bakerId)
+      renderBakerList()
+  }) 
+}
