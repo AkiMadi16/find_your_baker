@@ -38,7 +38,7 @@ function logIn(event) {
       } else {
         const userName = res
         // console.log(userName)
-        state.loggedInUserName = userName
+        state.loggedInEmail = userName
         renderBakerList()
       }
     })
@@ -48,4 +48,8 @@ function renderError(errorMessage) {
   const page = document.querySelector('#page')
   page.innerHTML =
     `<h2 style='color: red;'>${errorMessage}</h2>` + page.innerHTML
+}
+
+function logOut() {
+  state.loggedInEmail = null
 }
