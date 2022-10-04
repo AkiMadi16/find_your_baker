@@ -1,5 +1,5 @@
 CREATE DATABASE baker_collective; 
-\c baker_collective;\
+\c baker_collective;
 
 CREATE TABLE bakers(
     id SERIAL PRIMARY KEY,
