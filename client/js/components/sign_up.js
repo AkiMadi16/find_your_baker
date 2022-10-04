@@ -32,7 +32,7 @@ function signUp(event) {
   const data = Object.fromEntries(new FormData(form))
   // console.log(data)
 
-  fetch('api/users', {
+  fetch('api/user', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
@@ -41,6 +41,6 @@ function signUp(event) {
   .then(userEmail => {
       console.log(userEmail)
       state.loggedInUserEmail = userEmail
-      renderRestaurantList()
+      renderBakerList()
   })
 }
