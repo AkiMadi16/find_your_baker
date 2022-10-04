@@ -9,7 +9,7 @@ function renderBakerList() {
 function renderBakers() {
 return state.bakers.map(baker => `  
 <div class='baker card' data-id ='${baker.id}'>
-  <img class="card-img-top" src="${baker.img_url}" alt="Card image cap">
+  <img class="card-img-top" src="${baker.img}" alt="Card image cap">
   <div class="card-body">
       <h5 class="card-title">${baker.name}</h5>
       <p class="card-text">${baker.address}</p>
