@@ -28,8 +28,6 @@ function renderAddbaker () {
   `
 }
 
-
-
 function createBaker(event) {
   event.preventDefault();
   const form = event.target;
@@ -46,6 +44,6 @@ function createBaker(event) {
     .then(res => res.json())
     .then(baker => {
       state.bakers.push(baker)
-      renderBakersList()
+      renderBakerList()
   })
 }
