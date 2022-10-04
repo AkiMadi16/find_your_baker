@@ -13,9 +13,10 @@ img {
   object-fit: cover;
 }
 form {
-  background-color: rgb(216, 255, 214);
+  background-color: rgb(231, 193, 226);
   border: 1px sollid darkgray;
   padding: 2rem 2rem;
+  border-radius: 1rem;
 }
 button {
   margin-top: 1rem;
