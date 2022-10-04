@@ -27,5 +27,20 @@ router.delete('/:id', (req, res) => {
   
 })
 
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const img = req.body.img;
+  const name = req.body.name;
+  const address = req.body.address;
+  const contact = req.body.contact;
+  const specialty = req.body.specialty;
+  
+
+  Baker
+    .update(id, img, name, address, contact, specialty)
+    .then(baker => res.json(baker))
+})
+
+
 module.exports = router
 
