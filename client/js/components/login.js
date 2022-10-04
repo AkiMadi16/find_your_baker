@@ -51,5 +51,7 @@ function renderError(errorMessage) {
 }
 
 function logOut() {
-  state.loggedInEmail = null
+  fetch('/api/sessions', {
+    method: 'DELETE'
+  })
 }
