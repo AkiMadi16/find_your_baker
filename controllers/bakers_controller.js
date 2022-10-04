@@ -18,5 +18,14 @@ router.post('/', (req, res) => {
     .then(baker => res.json(baker))
 })
 
+router.delete('/:id', (req, res) => {
+  const bakerId = req.params.id;
+
+    Baker
+      .delete(bakerId)
+      .then(() => res.json({ message: 'delete'}))
+  
+})
+
 module.exports = router
 
