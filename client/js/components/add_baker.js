@@ -1,4 +1,4 @@
-function renderAddbaker () {
+function renderAddBaker () {
   document.querySelector('#page').innerHTML = `
     <section class ="add-baker w-70 mx-auto">
       <form onSubmit="addBaker(event)">
@@ -28,7 +28,7 @@ function renderAddbaker () {
   `
 }
 
-function createBaker(event) {
+function addBaker(event) {
   event.preventDefault();
   const form = event.target;
 
