@@ -48,6 +48,12 @@ function updateBaker(event) {
   const data = Object.fromEntries(new FormData(form))
   console.log(data);
   bakerId = data.id;
+  var bakerIndex = 0
+  state.bakers.forEach((baker, index) => {
+    if (baker.id == bakerId) {
+        bakerIndex = index
+    }
+})
 
   fetch(`/api/bakers/${bakerId}`, {
       method: 'PUT',
@@ -56,7 +62,8 @@ function updateBaker(event) {
   })
       .then(res => res.json())
       .then(baker => {
-          state.bakers[bakerId] = baker;
+        console.log(baker)
+          state.bakers[bakerIndex] = baker;
           renderBakerList()
       })
 }
