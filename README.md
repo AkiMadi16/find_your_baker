@@ -15,7 +15,9 @@
 - Design the wireframe and layout
 - Design the database, one is for bakers, the other is for users
 - Team members take charge of bakers pages and users pages
-
+- Introduce Bootstrap to make beautiful layout 
+- Search functions
+- Different type of users will show different content
 
 
 ![Wireframing]()
@@ -28,13 +30,12 @@
 - Heroku
 - API
 
-## :scream: Bugs to fix :poop:
-- 
-
 
 ## :sob: Lessons learnt
-- 
+- Team work is important
+
 
 ## :white_check_mark: Future features
-- Logged in guests can review the baker 
 - Build another database for reviews
+- Logged in guests can review the bakers 
+- 
