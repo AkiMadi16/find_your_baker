@@ -25,14 +25,14 @@ const Baker = {
         `
         return db.query(sql, [bakerId])
     },
-    update: (id, img, name, address, contact, specialty) => {
+    update: (id, img, name, address, suburb, postcode, contact, specialty) => {
       const sql =`
-          UPDATE bakers SET img = $2, name = $3, address = $4, contact = $5, specialty = $6
+          UPDATE bakers SET img = $2, name = $3, address = $4, suburb = $5, postcode = $6, contact = $7, specialty = $8
           WHERE id = $1
           RETURNING *
       `
       return db
-          .query(sql, [id, img, name, address, contact, specialty])
+          .query(sql, [id, img, name, address, suburb, postcode, contact, specialty])
           .then(dbRes => dbRes.rows[0])
   }
   }

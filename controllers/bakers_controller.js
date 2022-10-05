@@ -32,12 +32,14 @@ router.put('/:id', (req, res) => {
   const img = req.body.img;
   const name = req.body.name;
   const address = req.body.address;
+  const suburb = req.body.suburb;
+  const postcode = req.body.postcode;
   const contact = req.body.contact;
   const specialty = req.body.specialty;
   
 
   Baker
-    .update(id, img, name, address, contact, specialty)
+    .update(id, img, name, address, suburb, postcode, contact, specialty)
     .then(baker => res.json(baker))
 })
 
