@@ -8,3 +8,4 @@ fetch('/api/bakers')
   state.bakers = bakers
   renderBakerList()
 })
+

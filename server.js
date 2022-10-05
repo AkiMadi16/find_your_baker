@@ -1,10 +1,6 @@
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3001;
-<<<<<<< HEAD
-
-=======
->>>>>>> e938309 (posssible server file conflict)
 
 const logger = require('./middlewares/logger')
 const sessions = require('./middlewares/sessions')
