@@ -54,4 +54,8 @@ function logOut() {
   fetch('/api/sessions', {
     method: 'DELETE'
   })
+  .then(() => {
+    state.loggedInEmail =null
+    renderBakerList()
+  })
 }
