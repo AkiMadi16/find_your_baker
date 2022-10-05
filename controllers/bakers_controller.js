@@ -43,6 +43,14 @@ router.put('/:id', (req, res) => {
     .then(baker => res.json(baker))
 })
 
+router.get('/search', (req, res) => {
+  const postcode = req.body
+  console.log(postcode)
+  Baker
+    .search(postcode)
+    .then(bakers => res.json(bakers))
+})
+
 
 module.exports = router
 
