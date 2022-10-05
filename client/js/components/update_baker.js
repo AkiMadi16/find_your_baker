@@ -13,7 +13,7 @@ function renderUpdateBaker(event) {
 
 
   document.querySelector('#page').innerHTML = `
-    <section class ="update-baker mx-auto mt-4" style="width: 300px;">
+    <section class ="update-baker mx-auto mt-4" style="width: 340px;">
       <form onSubmit="updateBaker(event)" id="render-form">
         <input type="hidden" name="id" value="${bakerId}"></input>
         <div class="form-group">

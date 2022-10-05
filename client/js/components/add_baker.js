@@ -1,9 +1,9 @@
 function renderAddBaker () {
   document.querySelector('#page').innerHTML = `
-    <section class ="add-baker mx-auto mt-4" style="width: 300px;">
+    <section class ="add-baker mx-auto mt-4" style="width: 340px;">
       <form onSubmit="addBaker(event)" id="render-form">
         <div class="form-group">
-            <label>Img url</label>
+            <label>Enter image url</label>
             <input type="text" class="form-control" name="img" required>
         </div>
         <div class="form-group">
@@ -14,11 +14,9 @@ function renderAddBaker () {
           <label>Address</label>
           <input type="text" class="form-control" name="address" required>
         </div>
-        <div class="form-group">
+        <div class="form-group d-inline-flex mt-2">
           <label>Suburb</label>
           <input type="text" class="form-control" name="suburb" required>
-        </div>
-        <div class="form-group">
           <label>Postcode</label>
           <input type="text" class="form-control" name="postcode" required>
         </div>

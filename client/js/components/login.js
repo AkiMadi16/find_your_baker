@@ -1,7 +1,7 @@
 function renderLogin() {
   document.querySelector('#page').innerHTML = `
   <section class ="login">
-        <form onSubmit="logIn(event)" class="mx-auto mt-4" style="width: 300px;" id="render-form">
+        <form onSubmit="logIn(event)" class="mx-auto mt-4" style="width: 340px;" id="render-form">
             <h3 class="text-center">Login</h3>
             <div class="form-group">
                 <span class= "required">*</span><label>Email</label>

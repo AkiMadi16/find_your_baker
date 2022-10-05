@@ -1,7 +1,7 @@
 function renderSignUp() {
   document.querySelector('#page').innerHTML = `
   <section class ="signup">
-            <form onSubmit="signUp(event)" class="mx-auto mt-4" style="width: 300px;" id="render-form">
+            <form onSubmit="signUp(event)" class="mx-auto mt-4" style="width: 340px;" id="render-form">
                 <h3 class="text-center">Sign Up</h3>
                 <div class="form-group">
                     <span class= 'required'>*</span><label>Username</label>
