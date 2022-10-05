@@ -8,7 +8,7 @@ function renderBakerList() {
 
 function renderBakers() {
 return state.bakers.map(baker => `  
-<div class='baker card' data-id='${baker.id}' data-img='${baker.img}' data-name='${baker.name}' data-address='${baker.address}' data-contact='${baker.contact}' data-specialty='${baker.specialty}'>
+<div class='baker card' data-id='${baker.id}' data-img='${baker.img}' data-name='${baker.name}' data-address='${baker.address}' data-suburb='${baker.suburb}' data-postcode='${baker.postcode}' data-contact='${baker.contact}' data-specialty='${baker.specialty}'>
   <img class="card-img-top" src="${baker.img}" alt="Card image cap">
   <div class="card-body">
       <h5 class="card-title">${baker.name}</h5>

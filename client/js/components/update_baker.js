@@ -6,6 +6,8 @@ function renderUpdateBaker(event) {
   const bakerImg = bakerDOM.dataset.img
   const bakerName = bakerDOM.dataset.name
   const bakerAddress = bakerDOM.dataset.address
+  const bakerSuburb = bakerDOM.dataset.suburb
+  const bakerPostcode = bakerDOM.dataset.postcode
   const bakerContact = bakerDOM.dataset.contact
   const bakerSpecialty = bakerDOM.dataset.specialty
   console.log(bakerDOM.dataset)
@@ -13,33 +15,39 @@ function renderUpdateBaker(event) {
 
 
   document.querySelector('#page').innerHTML = `
-    <section class ="update-baker mx-auto mt-4" style="width: 340px;">
-      <form onSubmit="updateBaker(event)" id="render-form">
-        <input type="hidden" name="id" value="${bakerId}"></input>
-        <div class="form-group">
-            <label>Img url</label>
-            <input type="text" class="form-control" name="img" value="${bakerImg}">
-        </div>
-        <div class="form-group">
-          <label>Baker name</label>
-          <input type="text" class="form-control" name="name" value="${bakerName}">
-        </div>
-        <div class="form-group">
-            <label>Address</label>
-            <input type="text" class="form-control" name="address" value="${bakerAddress}">
-        </div>
-        <div class="form-group">
-          <label>Contact</label>
-          <input type="text" class="form-control" name="contact" value="${bakerContact}">
-        </div>
-        <div class="form-group">
-          <label>Specialty</label>
-          <input type="text" class="form-control" name="specialty" value="${bakerSpecialty}">
-        </div>
-        <button type="submit" class="btn btn-primary">Update Baker</button>
-      </form>
-  </section>
-  `
+  <section class ="add-baker mx-auto mt-4" style="width: 340px;">
+  <form onSubmit="updateBaker(event)" id="render-form">
+    <input type="hidden" name="id" value="${bakerId}">
+    <div class="form-group">
+      <label>Enter image url</label>
+      <input type="text" class="form-control" name="img" value="${bakerImg}" required>
+    </div>
+    <div class="form-group">
+      <label>Baker name</label>
+      <input type="text" class="form-control" name="name" value="${bakerName}" required>
+    </div>
+    <div class="form-group">
+      <label>Address</label>
+      <input type="text" class="form-control" name="address" value="${bakerAddress}" required>
+    </div>
+    <div class="form-group d-inline-flex mt-2">
+      <label>Suburb</label>
+      <input type="text" class="form-control" name="suburb" value="${bakerSuburb}" required>
+      <label>Postcode</label>
+      <input type="text" class="form-control" name="postcode" value="${bakerPostcode}"required>
+    </div>
+    <div class="form-group">
+      <label>Contact</label>
+      <input type="text" class="form-control" name="contact" value="${bakerContact}" required>
+    </div>
+    <div class="form-group">
+      <label>Specialty</label>
+      <input type="text" class="form-control" name="specialty" value="${bakerSpecialty}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Baker</button>
+  </form>
+</section>
+`
 }
 
 function updateBaker(event) {
