@@ -42,5 +42,9 @@ User
   })
 })
 
+router.delete('/', (req,res) => {
+  delete req.session.userId 
+  res.json({message: 'delete successful'})
+})
 
 module.exports = router
