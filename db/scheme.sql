@@ -20,3 +20,9 @@ CREATE TABLE users(
   password_digest TEXT,
   type TEXT
 );
+
+CREATE TABLE reviews(
+  id SERIAL PRIMARY KEY,
+  baker_id numeric,
+  review TEXT
+);
