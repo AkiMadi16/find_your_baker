@@ -4,13 +4,17 @@
 ## :computer: [Click here](#) to see my live project!
 
 ## :page_facing_up: About
-- It's an online webside providing bakers information 
-- Every guest can browse various bakers 
-- Logged-in guest can update, delete and buy furnitures. 
+- It's a group project where we not only show our technicals and but also apply git and github skills 
+- It's a single-page-application(SPA) website providing bakers information where the local community can find their favourite bakers and the bakers can have a place to show their food
+- Every guest can browse and search bakers they like 
+- Logged-in baker can update, delete and add infomation
+- Logged-in guest(eater) can review and rate the baker 
 
 
 ## :pencil2: Planning & Problem Solving
--
+- Design the wireframe and layout
+- Design the database, one is for bakers, the other is for users
+- Team members take charge of bakers pages and users pages
 
 
 
@@ -18,10 +22,11 @@
 
 ## :rocket: Cool tech
 - JS, CSS, HTML
-- Express
+- Express, pg, bcrypt, express-session
+- SQL, Postgresql
+- Bootstrap
 - Heroku
 - API
-- Bootstrap
 
 ## :scream: Bugs to fix :poop:
 - 
@@ -31,4 +36,5 @@
 - 
 
 ## :white_check_mark: Future features
-- logged in guests can review the baker 
+- Logged in guests can review the baker 
+- Build another database for reviews
