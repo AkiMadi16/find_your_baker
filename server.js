@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3001;
 
+
 const logger = require('./middlewares/logger')
 const sessions = require('./middlewares/sessions')
 const bakersController = require('./controllers/bakers_controller')
