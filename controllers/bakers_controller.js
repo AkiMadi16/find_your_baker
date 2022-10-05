@@ -43,12 +43,23 @@ router.put('/:id', (req, res) => {
     .then(baker => res.json(baker))
 })
 
-router.get('/search', (req, res) => {
-  const postcode = req.body
-  console.log(postcode)
-  Baker
-    .search(postcode)
-    .then(bakers => res.json(bakers))
+router.get('/:searchWord', (req, res) => {
+  const searchWord = req.params.searchWord
+  // searchWord is a postcode or a suburb
+  const numberFormOfWord = Number(searchWord)
+  if (isNaN(numberFormOfWord)) {
+    const modifyWord = searchWord.toLowerCase()
+    Baker
+      .searchBySuburb(modifyWord)
+      .then(bakers => res.json(bakers))
+    
+   
+  } else {
+    Baker
+      .searchByPostcode(searchWord)
+      .then(bakers => res.json(bakers))
+    
+  }
 })
 
 
