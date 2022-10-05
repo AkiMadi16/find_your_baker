@@ -28,7 +28,7 @@ function renderAddBaker () {
           <label>Specialty</label>
           <input type="text" class="form-control" name="specialty" required>
         </div>
-        <button type="submit" class="btn btn-primary">Add Baker</button>
+        <button type="submit" class="btn btn-light border-secondary">Add Baker</button>
       </form>
   </section>
   `

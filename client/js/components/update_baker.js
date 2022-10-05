@@ -44,7 +44,7 @@ function renderUpdateBaker(event) {
       <label>Specialty</label>
       <input type="text" class="form-control" name="specialty" value="${bakerSpecialty}" required>
     </div>
-    <button type="submit" class="btn btn-primary">Update Baker</button>
+    <button type="submit" class="btn btn-light border-secondary">Update Baker</button>
   </form>
 </section>
 `
