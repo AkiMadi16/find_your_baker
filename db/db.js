@@ -1,5 +1,5 @@
 const pg = require('pg')
-
+const localDbName = 'baker_collective'
 let db;
 if (process.env.DATABASE_URL) {
   db = new pg.Pool({
@@ -11,7 +11,7 @@ if (process.env.DATABASE_URL) {
 } else {
   if (process.env.DB_PASSWORD) {
     db = new pg.Pool({
-      database:  'baker_collective',
+      database: localDbName,
       password: process.env.DB_PASSWORD
     })
   } else {
