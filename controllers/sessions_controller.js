@@ -26,7 +26,6 @@ User
       res.status(400).json({ error: 'email and/or password cannot be blank' })
     } else {
       
-
       if (user) {
         const isValidPassword = bcrypt.compareSync(password, user.password_digest)
         if (isValidPassword) {
