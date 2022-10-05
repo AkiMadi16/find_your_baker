@@ -3,7 +3,7 @@ function showBakerDetails(bakerId) {
   const baker = state.bakers.find(baker => baker.id === bakerId)
 
   console.log(baker)
-  const BingMapsKey = BING_API_KEY
+  const BingMapsKey = "BING_API_KEY"
 
   const locationFinder = `http://dev.virtualearth.net/REST/v1/Locations?CountryRegion=AU&addressLine=${baker.address}&key=${BingMapsKey}`
 
