@@ -19,6 +19,13 @@ function renderSignUp() {
                     <span class= "required">*</span><label>Comfirm Password</label>
                     <input type="password" class="form-control" name="confirmPassword" required>
                 </div>
+                <div class="form-group mt-1">
+                  <label for="">Are you a ...</label><br> 
+                  <input type="radio" name="type" value="baker">
+                  <label for="baker">Baker</label><br>
+                  <input type="radio" name="type" value="sweet-tooth">
+                  <label for="css">Sweet tooth</label><br>
+                </div>
             <button type="submit" class="btn btn-light border-secondary">Sign Up</button>
         </form>
     </section>
