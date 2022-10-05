@@ -7,8 +7,8 @@ CREATE TABLE bakers(
     name TEXT,
     address TEXT,
     suburb TEXT,
-    postcode numeric,
-    contact numeric,
+    postcode TEXT,
+    contact TEXT,
     specialty TEXT,
     creator numeric
 );
