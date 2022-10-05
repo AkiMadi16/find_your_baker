@@ -20,6 +20,7 @@
   <script defer src="/js/components/login.js"></script>
   <script defer src="/js/components/sign_up.js"></script>
   <script defer src="/js/components/update_baker.js"></script>
+  <script defer src="/js/components/view_baker.js"></script>
 </head>
 <body>
   <header class="container w-100">
@@ -34,6 +35,7 @@
             <li class="nav-item">
               <a class="nav-link" onclick="renderAddBaker()">Add Baker</a>
             </li>
+            <li><a href="#" onClick="renderViewBakerDetails()"></a></li>
             <li class="nav-item">
               <a class="nav-link" onclick="renderSignUp()">Sign Up</a>
             </li>
@@ -43,8 +45,8 @@
               <a class="nav-link" onclick="logout()">Logout</a>
             </li>
           </ul>
-          <form class="d-inline-flex justify-content-end align-items-baseline" id="search">
-            <input class="form-control me-2" type="search" placeholder="Search by PostCode" aria-label="Search">
+          <form class="d-inline-flex justify-content-end align-items-baseline" id="search" onSubmit="search()">
+            <input class="form-control me-2" type="search" name ="search" placeholder="Search by PostCode" aria-label="Search">
             <button class="btn btn-outline" style='color: rgb(236, 218, 147);' type="submit">Search</button>
           </form>
         </div>
