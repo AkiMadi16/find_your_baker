@@ -35,15 +35,31 @@ const Baker = {
           .query(sql, [id, img, name, address, suburb, postcode, contact, specialty])
           .then(dbRes => dbRes.rows[0])
   },
-  search: (postcode) => {
+  searchByPostcode: (postcode) => {
     const sql = `
       SELECT * FROM bakers 
       WHERE postcode = $1
-      ORDER BY id 
+      
     `
     return db
       .query(sql, [postcode])
-      .then(dbRes => dbRes.rows)
+      .then(dbRes => {
+        console.log(dbRes.rows)
+        return dbRes.rows
+      })
+  },
+  searchBySuburb: (suburb) => {
+    const sql = `
+      SELECT * FROM bakers 
+      WHERE lower(suburb) = $1
+      
+    `
+    return db
+      .query(sql, [suburb])
+      .then(dbRes => {
+        console.log(dbRes.rows)
+        return dbRes.rows
+      })
   }
   }
 
