@@ -1,4 +1,4 @@
-function renderBakerList() {   
+function renderBakerList() { 
   document.querySelector('#page').innerHTML = `
       <section class='baker-list card-group m-3'>
           ${renderBakers()}

@@ -13,8 +13,8 @@ function renderUpdateBaker(event) {
 
 
   document.querySelector('#page').innerHTML = `
-    <section class ="update-baker w-70 mx-auto">
-      <form onSubmit="updateBaker(event)">
+    <section class ="update-baker mx-auto mt-4" style="width: 300px;">
+      <form onSubmit="updateBaker(event)" id="render-form">
         <input type="hidden" name="id" value="${bakerId}"></input>
         <div class="form-group">
             <label>Img url</label>
