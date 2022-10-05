@@ -1,7 +1,7 @@
 function renderLogin() {
   document.querySelector('#page').innerHTML = `
   <section class ="login">
-        <form onSubmit="logIn(event)" class="mx-auto mt-4" style="width: 300px;">
+        <form onSubmit="logIn(event)" class="mx-auto mt-4" style="width: 300px;" id="render-form">
             <h3 class="text-center">Login</h3>
             <div class="form-group">
                 <span class= "required">*</span><label>Email</label>
@@ -47,7 +47,7 @@ function logIn(event) {
 function renderError(errorMessage) {
   const page = document.querySelector('#page')
   page.innerHTML =
-    `<h2 style='color: red;'>${errorMessage}</h2>` + page.innerHTML
+    `<h2 style='color: rgb(129, 95, 95);'>${errorMessage}</h2>` + page.innerHTML
 }
 
 function logOut() {

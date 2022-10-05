@@ -1,7 +1,7 @@
 function renderSignUp() {
   document.querySelector('#page').innerHTML = `
   <section class ="signup">
-            <form onSubmit="signUp(event)" class="mx-auto mt-4" style="width: 300px;">
+            <form onSubmit="signUp(event)" class="mx-auto mt-4" style="width: 300px;" id="render-form">
                 <h3 class="text-center">Sign Up</h3>
                 <div class="form-group">
                     <span class= 'required'>*</span><label>Username</label>
@@ -58,6 +58,6 @@ function signUp(event) {
 function renderError(errorMessage) {
   const page = document.querySelector('#page')
   page.innerHTML =
-    `<h2 class ="text-center" style='color: red;'>${errorMessage}</h2>` +
+    `<h2 class ="text-center" style='color: rgb(129, 95, 95);'>${errorMessage}</h2>` +
     page.innerHTML
 }

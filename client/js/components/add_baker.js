@@ -1,26 +1,26 @@
 function renderAddBaker () {
   document.querySelector('#page').innerHTML = `
     <section class ="add-baker mx-auto mt-4" style="width: 300px;">
-      <form onSubmit="addBaker(event)">
+      <form onSubmit="addBaker(event)" id="render-form">
         <div class="form-group">
             <label>Img url</label>
-            <input type="text" class="form-control" name="img">
+            <input type="text" class="form-control" name="img" required>
         </div>
         <div class="form-group">
           <label>Baker name</label>
-          <input type="text" class="form-control" name="name">
+          <input type="text" class="form-control" name="name" required>
         </div>
         <div class="form-group">
             <label>Address</label>
-            <input type="text" class="form-control" name="address">
+            <input type="text" class="form-control" name="address" required>
         </div>
         <div class="form-group">
           <label>Contact</label>
-          <input type="text" class="form-control" name="contact">
+          <input type="text" class="form-control" name="contact" required>
         </div>
         <div class="form-group">
           <label>Specialty</label>
-          <input type="text" class="form-control" name="specialty">
+          <input type="text" class="form-control" name="specialty" required>
         </div>
         <button type="submit" class="btn btn-primary">Add Baker</button>
       </form>

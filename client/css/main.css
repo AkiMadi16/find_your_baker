@@ -12,12 +12,12 @@ img {
   height: 180px;
   object-fit: cover;
 }
-/* form {
+#render-form {
   background-color: rgb(245, 157, 155);
   border: 1px sollid darkgray;
   padding: 2rem 2rem;
   border-radius: 1rem;
-} */
+} 
 button {
   margin-top: 1rem;
 }
