@@ -12,7 +12,7 @@ if (process.env.DATABASE_URL) {
   if (process.env.DB_PASSWORD) {
     db = new pg.Pool({
       database: localDbName,
-      password: process.env.DB_PASSWORD
+      password: 1111
     })
   } else {
     db = new pg.Pool({
