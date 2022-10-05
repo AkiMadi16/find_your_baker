@@ -6,6 +6,8 @@ CREATE TABLE bakers(
     img TEXT,
     name TEXT,
     address TEXT,
+    suburb TEXT,
+    postcode numeric,
     contact numeric,
     specialty TEXT,
     creator numeric
