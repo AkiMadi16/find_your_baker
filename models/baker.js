@@ -34,6 +34,16 @@ const Baker = {
       return db
           .query(sql, [id, img, name, address, suburb, postcode, contact, specialty])
           .then(dbRes => dbRes.rows[0])
+  },
+  search: (postcode) => {
+    const sql = `
+      SELECT * FROM bakers 
+      WHERE postcode = $1
+      ORDER BY id 
+    `
+    return db
+      .query(sql, [postcode])
+      .then(dbRes => dbRes.rows)
   }
   }
 
