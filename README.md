@@ -1,7 +1,7 @@
 # Find Your Baker
   
 
-## :computer: [https://shrouded-scrubland-51079.herokuapp.com/](#) to see my live project!
+## :computer: [click me]((https://www.example.com)) to see my live project!
 
 ## :page_facing_up: About
 - It's a group project where we not only show our technicals and but also apply git and github skills 
