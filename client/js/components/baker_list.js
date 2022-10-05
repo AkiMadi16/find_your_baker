@@ -36,8 +36,8 @@ return state.bakers.map(baker => `
       <p class="card-text">${baker.address}, ${baker.suburb}, ${baker.postcode}</p>
       <p class="card-text">${baker.contact}</p>
       <p class="card-text"><small class="text-muted">${baker.specialty}</small></p>
-      <a onClick = "deleteBaker(event)" class="card-link">Delete</a>
-      <a onClick = "renderUpdateBaker(event)" class="card-link">Update</a>
+      <a onClick = "rate(event)" class="card-link">Rating</a>
+      <a onClick = "review(event)" class="card-link">Review</a>
   </div>
 </div>
 `).join('')
