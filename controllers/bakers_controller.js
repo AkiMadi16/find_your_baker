@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const {img, name, address, contact, specialty} = req.body
+  const {img, name, address, suburb, postcode, contact, specialty} = req.body
 
   Baker
-    .create(img, name, address, contact, specialty)
+    .create(img, name, address, suburb, postcode, contact, specialty)
     .then(baker => res.json(baker))
 })
 

@@ -11,8 +11,16 @@ function renderAddBaker () {
           <input type="text" class="form-control" name="name" required>
         </div>
         <div class="form-group">
-            <label>Address</label>
-            <input type="text" class="form-control" name="address" required>
+          <label>Address</label>
+          <input type="text" class="form-control" name="address" required>
+        </div>
+        <div class="form-group">
+          <label>Suburb</label>
+          <input type="text" class="form-control" name="suburb" required>
+        </div>
+        <div class="form-group">
+          <label>Postcode</label>
+          <input type="text" class="form-control" name="postcode" required>
         </div>
         <div class="form-group">
           <label>Contact</label>

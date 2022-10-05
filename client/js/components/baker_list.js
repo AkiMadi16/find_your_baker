@@ -12,7 +12,7 @@ return state.bakers.map(baker => `
   <img class="card-img-top" src="${baker.img}" alt="Card image cap">
   <div class="card-body">
       <h5 class="card-title">${baker.name}</h5>
-      <p class="card-text">${baker.address}</p>
+      <p class="card-text">${baker.address}, ${baker.suburb}, ${baker.postcode}</p>
       <p class="card-text">${baker.contact}</p>
       <p class="card-text"><small class="text-muted">${baker.specialty}</small></p>
       <a onClick = "deleteBaker(event)" class="card-link">Delete</a>
