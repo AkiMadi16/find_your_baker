@@ -1,6 +1,6 @@
 function renderAddBaker () {
   document.querySelector('#page').innerHTML = `
-    <section class ="add-baker w-70 mx-auto">
+    <section class ="add-baker mx-auto mt-4" style="width: 300px;">
       <form onSubmit="addBaker(event)">
         <div class="form-group">
             <label>Img url</label>
