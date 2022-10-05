@@ -1,6 +1,6 @@
 function showBakerDetails(bakerId) {
 
-  const baker = state.allEats.find(baker => baker.id === bakerId)
+  const baker = state.bakers.find(baker => baker.id === bakerId)
 
   console.log(baker)
   const BingMapsKey = "AoS33OiU3l7zMwBbSCjr22bUjtsV6oAwCDHjtQD1oxV2Zuitl9lHZmwQUJ8EK1tb"
@@ -11,7 +11,7 @@ function showBakerDetails(bakerId) {
     .then(res => {
       console.log(res);
       // get lat, long from maps api
-  
+       
     })
 }
 
