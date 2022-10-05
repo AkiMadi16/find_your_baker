@@ -50,7 +50,7 @@ function renderError(errorMessage) {
     `<h2 style='color: rgb(129, 95, 95);'>${errorMessage}</h2>` + page.innerHTML
 }
 
-function logOut() {
+function logout() {
   fetch('/api/sessions', {
     method: 'DELETE'
   })

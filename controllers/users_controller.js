@@ -8,7 +8,7 @@ const User = require('../models/user')
 
 // routes
 router.post('/', (req, res) => {
-  const {userName, email, password, confirmPassword} = req.body
+  const {userName, email, password, confirmPassword, type} = req.body
  
   if (password === confirmPassword) {
       const passwordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(10), null)
@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
               res.json({ error: 'This email is already associated with an account!' })
             } else {
               User 
-                .create(userName, email, passwordDigest)
+                .create(userName, email, passwordDigest, type)
                 .then(email => res.json(email))
             }   
       }) 

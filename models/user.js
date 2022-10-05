@@ -2,15 +2,15 @@ const db = require('../db/db')
 
 
 const User = {
-  create: (name, email, passwordDigest) => {
+  create: (name, email, passwordDigest, type) => {
       const sql = `
-      INSERT INTO users(name, email, password_digest)
-      VALUES ($1, $2, $3)
+      INSERT INTO users(name, email, password_digest, type)
+      VALUES ($1, $2, $3, $4)
       RETURNING *
       `
       
       return db
-      .query(sql, [name, email, passwordDigest])
+      .query(sql, [name, email, passwordDigest, type])
       .then(dbRes => dbRes.rows[0].email)
   },
 
