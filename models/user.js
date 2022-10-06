@@ -33,7 +33,9 @@ const User = {
 
     return db
     .query(sql, [id])
-    .then(dbRes => dbRes.rows[0].email)
+    .then(dbRes => {
+      return {name: dbRes.rows[0].name, email: dbRes.rows[0].email, type: dbRes.rows[0].type}
+    })
   }
 }
 

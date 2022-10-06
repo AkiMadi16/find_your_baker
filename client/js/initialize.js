@@ -14,8 +14,12 @@ fetch('/api/bakers')
 
 fetch('/api/sessions')
   .then(res => res.json())
-  .then(userName => {
-    if (typeof userName === 'string') {
-      state.loggedInEmail = userName
+  .then(user => {
+    if (typeof user.email === 'string') {
+      console.log(user)
+      state.loggedInEmail = user.email
+      state.loggedInName = user.name
+      state.loggedInUsertype = user.type
+      renderBakerList()
     }
   })
