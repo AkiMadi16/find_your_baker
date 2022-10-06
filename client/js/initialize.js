@@ -1,6 +1,8 @@
 const state = {
   bakers: [],
   loggedInEmail: null,
+  loggedInUsertype: null,
+  loggedInName: null,
   bakersForBaker: []
 }
 fetch('/api/bakers')
