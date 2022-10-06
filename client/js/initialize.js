@@ -10,3 +10,10 @@ fetch('/api/bakers')
   renderBakerList()
 })
 
+fetch('/api/sessions')
+  .then(res => res.json())
+  .then(userName => {
+    if (typeof userName === 'string') {
+      state.loggedInEmail = userName
+    }
+  })
