@@ -6,27 +6,7 @@ function renderBakerList() {
     </section>
 `
   } else {
-    console.log(state.loggedInUsertype)
-    if (state.loggedInUsertype == 'baker') {
-      fetch(`/api/bakers/${state.loggedInName}/baker`)
-      .then(res => res.json())
-      .then(bakers => {
-        console.log(bakers)
-        state.bakersForBaker = bakers
-        document.querySelector('#page').innerHTML = `
-        <section class='baker-list card-group m-3'>
-          ${renderBakersForBaker()}
-        </section>
-      `
-      })
-      
-    } else {
-      document.querySelector('#page').innerHTML = `
-        <section class='baker-list card-group m-3'>
-            ${renderBakers()}
-        </section>
-      `
-    }
+    renderLoginPage()
   }
 }
 
