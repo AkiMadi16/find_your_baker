@@ -60,6 +60,18 @@ const Baker = {
         console.log(dbRes.rows)
         return dbRes.rows
       })
+  },
+  findABaker: (loggedInBakerName) => {
+    const sql = `
+      SELECT * FROM bakers
+      WHERE name = $1
+    `
+    return db
+      .query(sql, [loggedInBakerName])
+      .then(dbRes => {
+        console.log(dbRes.rows)
+        return dbRes.rows
+      })
   }
   }
 

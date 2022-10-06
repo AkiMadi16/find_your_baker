@@ -1,6 +1,7 @@
 const state = {
   bakers: [],
-  loggedInEmail: null
+  loggedInEmail: null,
+  bakersForBaker: []
 }
 fetch('/api/bakers')
   .then(res => res.json())

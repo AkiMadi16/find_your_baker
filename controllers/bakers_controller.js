@@ -62,6 +62,20 @@ router.get('/:searchWord', (req, res) => {
   }
 })
 
+router.get('/:loggedInBaker/baker', (req, res) => {
+  const loggedInBakerName = req.params.loggedInBaker
+  // console.log(loggedInBakerName)
+  
+ 
+    Baker
+      .findABaker(loggedInBakerName)
+      .then(bakers => {
+        console.log(bakers)
+        return res.json(bakers)
+      })
+  
+})
+
 
 module.exports = router
 
