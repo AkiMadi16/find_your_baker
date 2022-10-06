@@ -9,7 +9,7 @@ fetch('/api/bakers')
   .then(res => res.json())
   .then(bakers => {
   state.bakers = bakers
-  renderLoginPage()
+  renderBakerList()
 })
 
 fetch('/api/sessions')
