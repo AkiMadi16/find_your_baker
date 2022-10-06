@@ -7,6 +7,7 @@ const sessions = require('./middlewares/sessions')
 const bakersController = require('./controllers/bakers_controller')
 const usersController = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
+reviewsController = require('./controllers/reviews_controller')
 
 app.listen(PORT, () => console.log(`server listening to port ${PORT}`))
 
