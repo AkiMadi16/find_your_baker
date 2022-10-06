@@ -27,7 +27,7 @@ function showBakerDetails(bakerId) {
 function renderViewBakerDetails(baker, map) {
   document.querySelector('#page').innerHTML = `
     <secton class='baker-details'>
-    <a class="navbar-brand flex-grow-1 "  aria-current="page" onclick="renderBakerList()">▶︎ Back to Home</a>
+    <a onClick = "renderBakerList()">▶︎ Back to Home</a>
       <h2>${baker.name}</h2>
       <img src="${map}">
     </section>
