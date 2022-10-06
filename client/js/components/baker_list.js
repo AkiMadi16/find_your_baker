@@ -88,6 +88,6 @@ function deleteBaker(event) {
   })
     .then(() => {
       state.bakers = state.bakers.filter(t => t.id != bakerId)
-      renderBakerList()
+      renderLoginPage()
   }) 
 }

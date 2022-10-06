@@ -50,6 +50,6 @@ function addBaker(event) {
     .then(res => res.json())
     .then(baker => {
       state.bakers.push(baker)
-      renderBakerList()
+      renderLoginPage()
   })
 }
