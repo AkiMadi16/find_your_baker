@@ -72,7 +72,7 @@ function updateBaker(event) {
       .then(baker => {
         console.log(baker)
           state.bakers[bakerIndex] = baker;
-          renderBakerList()
+          renderLoginPage ()
       })
 }
 
