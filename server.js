@@ -18,7 +18,7 @@ app.use(sessions)
 app.use('/api/bakers', bakersController)
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
-app.use('/api/bakers/reviews', reviewsController)
+app.use('/api/reviews', reviewsController)
 
 app.get('/bingMapsKey', (req, res) => {
 
