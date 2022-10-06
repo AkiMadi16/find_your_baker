@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const {img, name, address, suburb, postcode, contact, specialty} = req.body
+  const {img, name, address, suburb, postcode, contact, specialty, creator} = req.body
 
   Baker
-    .create(img, name, address, suburb, postcode, contact, specialty)
+    .create(img, name, address, suburb, postcode, contact, specialty, creator)
     .then(baker => res.json(baker))
 })
 
@@ -62,13 +62,13 @@ router.get('/:searchWord', (req, res) => {
   }
 })
 
-router.get('/:loggedInBaker/baker', (req, res) => {
-  const loggedInBakerName = req.params.loggedInBaker
+router.get('/:loggedInEmail/baker', (req, res) => {
+  const loggedInEmail = req.params.loggedInEmail
   // console.log(loggedInBakerName)
   
  
     Baker
-      .findABaker(loggedInBakerName)
+      .findABaker(loggedInEmail)
       .then(bakers => {
         console.log(bakers)
         return res.json(bakers)

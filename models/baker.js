@@ -7,15 +7,15 @@ const Baker = {
             .query(sql)
             .then(dbRes => dbRes.rows)
     },
-    create: (img, name, address, suburb, postcode, contact, specialty) => {
+    create: (img, name, address, suburb, postcode, contact, specialty, creator) => {
         const sql = `
         INSERT INTO bakers(img, name, address, suburb, postcode, contact, specialty)
-        VALUES ($1, $2, $3, $4, $5, $6, $7)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING *
        
     `
     return db
-            .query(sql, [img, name, address, suburb, postcode, contact, specialty])
+            .query(sql, [img, name, address, suburb, postcode, contact, specialty, creator])
             .then(dbRes => dbRes.rows[0])
     },
 
@@ -61,13 +61,13 @@ const Baker = {
         return dbRes.rows
       })
   },
-  findABaker: (loggedInBakerName) => {
+  findABaker: (loggedInEmail) => {
     const sql = `
       SELECT * FROM bakers
-      WHERE name = $1
+      WHERE creator = $1
     `
     return db
-      .query(sql, [loggedInBakerName])
+      .query(sql, [loggedInEmail])
       .then(dbRes => {
         console.log(dbRes.rows)
         return dbRes.rows

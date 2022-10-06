@@ -1,6 +1,6 @@
 function renderLoginPage() {
   if (state.loggedInUsertype === 'baker') {
-    fetch(`/api/bakers/${state.loggedInName}/baker`)
+    fetch(`/api/bakers/${state.loggedInEmail}/baker`)
       .then(res => res.json())
       .then(bakers => {
         console.log(bakers)
