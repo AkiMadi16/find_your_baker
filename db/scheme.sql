@@ -10,7 +10,7 @@ CREATE TABLE bakers(
     postcode TEXT,
     contact TEXT,
     specialty TEXT,
-    creator numeric
+    creator TEXT
 );
 
 

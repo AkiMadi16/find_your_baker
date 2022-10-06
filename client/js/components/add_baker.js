@@ -28,6 +28,7 @@ function renderAddBaker () {
           <label>Specialty</label>
           <input type="text" class="form-control" name="specialty" required>
         </div>
+        <input type="hidden" class="form-control" name="creator" value="${state.loggedInEmail}" >
         <button type="submit" class="btn btn-light border-secondary">Add Baker</button>
       </form>
   </section>
