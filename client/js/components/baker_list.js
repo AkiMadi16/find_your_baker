@@ -6,7 +6,7 @@ function renderBakerList() {
     </section>
 `
   } else {
-     document.querySelector('#page').innerHTML = `
+    document.querySelector('#page').innerHTML = `
       <section class='baker-list card-group m-3'>
           ${renderBakers()}
       </section>
@@ -22,11 +22,11 @@ function renderPreLoginBakers() {
         <h5 class="card-title">${baker.name}</h5>
         <p class="card-text">${baker.address}</p>
         <p class="card-text"><small class="text-muted">${baker.specialty}</small></p> 
-        <button onClick="showBakerDetails(${baker.id})">View details</button> 
+        <a onClick="showBakerDetails(${baker.id})">View details</a>
     </div>
   </div>
   `).join('')
-  } 
+} 
 
 function renderBakers() {
 return state.bakers.map(baker => `  
