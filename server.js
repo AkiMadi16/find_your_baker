@@ -7,7 +7,7 @@ const sessions = require('./middlewares/sessions')
 const bakersController = require('./controllers/bakers_controller')
 const usersController = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
-const reviewsController = require('./controllers/reviews_controller')
+
 app.listen(PORT, () => console.log(`server listening to port ${PORT}`))
 
 app.use(logger)
@@ -17,4 +17,3 @@ app.use(sessions)
 app.use('/api/bakers', bakersController)
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
-app.use('/api/bakers/reviews', reviewsController)
