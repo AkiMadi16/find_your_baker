@@ -54,7 +54,7 @@ function updateBaker(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form))
-  console.log(data);
+  // console.log(data);
   bakerId = data.id;
   var bakerIndex = 0
   state.bakers.forEach((baker, index) => {
