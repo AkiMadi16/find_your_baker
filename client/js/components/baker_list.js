@@ -1,5 +1,5 @@
 function renderBakerList() { 
-  if (state.loggedInEmail === null) {
+  if (state.loggedInEmail === null || state.loggedInEmail === undefined ) {
     document.querySelector('#page').innerHTML = `
     <section class='baker-list card-group m-3'>
         ${renderPreLoginBakers()}
