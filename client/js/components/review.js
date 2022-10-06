@@ -40,7 +40,7 @@ function review(event) {
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
   
-  fetch('/api/bakers/review', {
+  fetch('/api/bakers/reviews', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
