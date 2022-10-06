@@ -24,8 +24,9 @@ function renderLoginPage() {
     <div class = "row">
       <section class="col-md-8 col-sm-1 col-lg-8 card-group m-3">${renderBakers()}</section> 
       <aside class = "col-md-3 col-sm-1 col-lg-3">
-        <header class = "row d-block">
+        <header class = "row d-block mx-auto">
           <h3>${state.loggedInName}</h3>
+        </header>
         <div class="baker-list card-group m-3">${renderSweetTooth()}</div>
       </aside>
     </div>
