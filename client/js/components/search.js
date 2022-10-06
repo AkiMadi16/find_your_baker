@@ -74,6 +74,7 @@ function renderSearchError() {
     document.querySelector('#page').innerHTML = `
       <section class='baker-list card-group m-3'>
         <h2> Sorry! There is no baker in this area.</h2>
+        <div><a onClick = "renderBakerList()">◀︎ Back to Home</a></div>
       </section>
   `
   } else {
@@ -88,6 +89,8 @@ function renderSearchError() {
           <div class="baker-list card-group m-3">${renderBakersForBaker()}</div>
         </aside>
       </div>
+      
+ 
       `
   }
 }

@@ -26,6 +26,8 @@ function renderViewBakerDetails(baker, map) {
   <section class='baker-details'>
   <a onClick = "renderBakerList()">◀︎ Back to Home</a>
       <h2>${baker.name}</h2>
+      <p>${baker.address}</p>
+      <p>${baker.postcode}</p>
       <img class="map" src="${map}">
     </secction>
     `
