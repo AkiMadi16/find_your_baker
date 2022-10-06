@@ -36,9 +36,15 @@ function logIn(event) {
         renderLogin()
         renderError(res.error)
       } else {
-        const userName = res
-        // console.log(userName)
+        const userName = res.email
+        const userType = res.type
+        const userRealName = res.name
+        console.log(userName)
+        console.log(userType)
+        console.log(userRealName)
         state.loggedInEmail = userName
+        state.loggedInUsertype = userType
+        state.loggedInName = userRealName
         renderBakerList()
       }
     })

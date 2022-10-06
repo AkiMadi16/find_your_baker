@@ -30,7 +30,7 @@ User
         const isValidPassword = bcrypt.compareSync(password, user.password_digest)
         if (isValidPassword) {
           req.session.userId = user.userID
-          res.json(user.email)
+          res.json({name: user.name, email: user.email, type: user.type })
         } else {
           res.status(400).json({ error: 'Invalid Login' })
         }

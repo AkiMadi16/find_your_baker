@@ -6,11 +6,27 @@ function renderBakerList() {
     </section>
 `
   } else {
-    document.querySelector('#page').innerHTML = `
-      <section class='baker-list card-group m-3'>
-          ${renderBakers()}
-      </section>
-  `
+    console.log(state.loggedInUsertype)
+    if (state.loggedInUsertype == 'baker') {
+      fetch(`/api/bakers/${state.loggedInName}/baker`)
+      .then(res => res.json())
+      .then(bakers => {
+        console.log(bakers)
+        state.bakersForBaker = bakers
+        document.querySelector('#page').innerHTML = `
+        <section class='baker-list card-group m-3'>
+          ${renderBakersForBaker()}
+        </section>
+      `
+      })
+      
+    } else {
+      document.querySelector('#page').innerHTML = `
+        <section class='baker-list card-group m-3'>
+            ${renderBakers()}
+        </section>
+      `
+    }
   }
 }
 
@@ -43,6 +59,23 @@ return state.bakers.map(baker => `
 </div>
 `).join('')
 } 
+
+function renderBakersForBaker() {
+  console.log(state.bakersForBaker)
+  return state.bakersForBaker.map(baker => `  
+    <div class='baker card' data-id='${baker.id}' data-img='${baker.img}' data-name='${baker.name}' data-address='${baker.address}' data-suburb='${baker.suburb}' data-postcode='${baker.postcode}' data-contact='${baker.contact}' data-specialty='${baker.specialty}'>
+    <img class="card-img-top" src="${baker.img}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">${baker.name}</h5>
+        <p class="card-text">${baker.address}, ${baker.suburb}, ${baker.postcode}</p>
+        <p class="card-text">${baker.contact}</p>
+        <p class="card-text"><small class="text-muted">${baker.specialty}</small></p>
+        <a onClick = "deleteBaker(event)" class="card-link">Delete</a>
+        <a onClick = "renderUpdateBaker(event)" class="card-link">Update</a>
+    </div>
+  </div>
+  `).join('')
+  } 
 
 function deleteBaker(event) {
   const deleteBtn = event.target;
