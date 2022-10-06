@@ -45,7 +45,7 @@ function logIn(event) {
         state.loggedInEmail = userName
         state.loggedInUsertype = userType
         state.loggedInName = userRealName
-        renderBakerList()
+        renderLoginPage ()
       }
     })
 }
