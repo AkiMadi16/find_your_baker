@@ -61,7 +61,9 @@ function logout() {
     method: 'DELETE'
   })
   .then(() => {
-    state.loggedInEmail =null
+    state.loggedInEmail = null
+    state.loggedInUsertype = null
+    state.loggedInName = null
     renderBakerList()
   })
 }

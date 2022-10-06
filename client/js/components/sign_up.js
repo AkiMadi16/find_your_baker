@@ -50,7 +50,7 @@ function signUp(event) {
               renderError(res.error)
           } else {
               state.loggedInEmail = res.email
-              renderLoginPage()
+              renderBakerList()
           }     
       })
 }
