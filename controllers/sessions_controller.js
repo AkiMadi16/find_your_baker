@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
 router.get('/', (req, res) => {
-  if (req.session.userID) {
+  if (req.session.userId) {
     User
     .findById(req.session.userId)
     .then(userName => res.json(userName))
@@ -29,7 +29,7 @@ User
       if (user) {
         const isValidPassword = bcrypt.compareSync(password, user.password_digest)
         if (isValidPassword) {
-          req.session.userId = user.userID
+          req.session.userId = user.id
           res.json({name: user.name, email: user.email, type: user.type })
         } else {
           res.status(400).json({ error: 'Invalid Login' })
