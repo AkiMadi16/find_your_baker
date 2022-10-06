@@ -6,9 +6,12 @@ function searchByWord(event) {
   fetch(`/api/bakers/${searchWord}`)
     .then(res => res.json())
     .then(baker => {
-      console.log(baker)
       state.searches = baker
-      renderSearchList()
+      if (state.searches.length == 0) {
+        renderSearchError()
+      } else {
+        renderSearchList()
+      } 
     })
 }
 
@@ -33,3 +36,8 @@ function renderSearchs() {
   </div>
 `).join('')
 } 
+
+function renderSearchError() {
+  document.querySelector('#page').innerHTML =
+    `<h2> Sorry! There is no baker in this area.</h2>` 
+}

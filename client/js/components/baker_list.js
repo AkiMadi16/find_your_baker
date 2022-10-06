@@ -58,24 +58,3 @@ function deleteBaker(event) {
       renderBakerList()
   }) 
 }
-
-function search (event) {
-  event.preventDefault()
-  let input = document.querySelector('.form-control')
-
-  let searchWord = input.value
-  console.log(searchWord)
-
-  fetch('/api/bakers', {
-    method: 'GET', 
-    headers: {'Content-Type': 'application/json'},
-    body:JSON.stringify(searchWord)
-  })
-    .then(res => res.json())
-    .then(bakers => {
-      state.bakers = bakers
-      renderBakerList()
-    })
-
-
-}
