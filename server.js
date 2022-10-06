@@ -17,3 +17,9 @@ app.use(sessions)
 app.use('/api/bakers', bakersController)
 app.use('/api/users', usersController)
 app.use('/api/sessions', sessionsController)
+
+
+const apiKey = process.env.BING_API_KEY
+app.get('/bingMapsKey', (req, res) => {
+  res.json(apiKey)
+})
