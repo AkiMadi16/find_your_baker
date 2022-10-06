@@ -23,27 +23,19 @@ function renderSearchList() {
       </section>
   `
 
-  
   } else {
-    
-      // document.querySelector('#page').innerHTML = `
-      //   <section class='baker-list card-group m-3'>
-      //     ${renderSearchsForUser()}
-      //   </section>
-      // `
-
-      document.querySelector('#page').innerHTML = `
-          <div class = "row">
-            <section class="col-md-8 col-sm-1 col-lg-8 card-group m-3">${renderSearchsForUser()}</section> 
-            <aside class = "col-md-3 col-sm-1 col-lg-3">
-              <header class = "row d-block">
-                <h3>${state.loggedInName}</h3>
-                <a onClick = "renderAddBaker()" class="card-link">Add Baker</a>
-              </header>
-              <div class="baker-list card-group m-3">${renderBakersForBaker()}</div>
-            </aside>
-          </div>
-          `
+    document.querySelector('#page').innerHTML = `
+      <div class = "row">
+        <section class="col-md-8 col-sm-1 col-lg-8 card-group m-3">${renderSearchsForUser()}</section> 
+        <aside class = "col-md-3 col-sm-1 col-lg-3">
+          <header class = "row d-block">
+            <h3>${state.loggedInName}</h3>
+            <a onClick = "renderAddBaker()" class="card-link">Add Baker</a>
+          </header>
+          <div class="baker-list card-group m-3">${renderBakersForBaker()}</div>
+        </aside>
+      </div>
+      `
     }
 }
 
@@ -78,20 +70,24 @@ function renderSearchsForUser() {
 } 
 
 function renderSearchError() {
-  // document.querySelector('#page').innerHTML =
-    // `<h2> Sorry! There is no baker in this area.</h2>` 
-
-
-document.querySelector('#page').innerHTML = `
-          <div class = "row">
-            <section class="col-md-8 col-sm-1 col-lg-8 card-group m-3">Sorry! There is no baker in this area.</section> 
-            <aside class = "col-md-3 col-sm-1 col-lg-3">
-              <header class = "row d-block">
-                <h3>${state.loggedInName}</h3>
-                <a onClick = "renderAddBaker()" class="card-link">Add Baker</a>
-              </header>
-              <div class="baker-list card-group m-3">${renderBakersForBaker()}</div>
-            </aside>
-          </div>
-          `
+  if (state.loggedInEmail === null) {
+    document.querySelector('#page').innerHTML = `
+      <section class='baker-list card-group m-3'>
+        <h2> Sorry! There is no baker in this area.</h2>
+      </section>
+  `
+  } else {
+    document.querySelector('#page').innerHTML = `
+      <div class = "row">
+        <section class="col-md-8 col-sm-1 col-lg-8 card-group m-3">Sorry! There is no baker in this area.</section> 
+        <aside class = "col-md-3 col-sm-1 col-lg-3">
+          <header class = "row d-block">
+            <h3>${state.loggedInName}</h3>
+            <a onClick = "renderAddBaker()" class="card-link">Add Baker</a>
+          </header>
+          <div class="baker-list card-group m-3">${renderBakersForBaker()}</div>
+        </aside>
+      </div>
+      `
+  }
 }
