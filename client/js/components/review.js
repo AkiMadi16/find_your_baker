@@ -2,7 +2,7 @@ function renderReview(bakerId) {
   const email = state.loggedInEmail
   document.querySelector('#page').innerHTML = `
     <section class ="add-review mx-auto mt-4" style="width: 340px;">
-      <form onSubmit="review(event)" id="render-form">
+      <form onSubmit="reviewBaker(event)" id="render-form">
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="rating" value="1">
           <label class="form-check-label" for="inlineRadio1">1</label>
@@ -35,7 +35,7 @@ function renderReview(bakerId) {
   `
 }
 
-function review(event) {
+function reviewBaker(event) {
    console.log('miao')
   event.preventDefault()
   const form = event.target;
