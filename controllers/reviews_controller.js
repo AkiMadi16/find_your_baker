@@ -17,4 +17,12 @@ router.post('/', (req, res) => {
   })
 })
 
+router.get('/:bakerId', (req, res) => {
+  const bakerId = req.params.bakerId
+  Reviews
+    .findAllReviews(bakerId)
+    .then(reviews => res.json(reviews))
+
+})
+
 module.exports = router

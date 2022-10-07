@@ -35,6 +35,7 @@ return state.bakers.map(baker => `
       <p class="card-text"><small class="text-muted">${baker.specialty}</small></p>
       <a onClick = "rate(event)" class="card-link">Rating</a>
       <a onClick = "renderReview(${baker.id})" class="card-link">Review</a>
+      <a onClick = "showReview(${baker.id})" class="card-link">showReview</a>
       <a onClick="showBakerDetails(${baker.id})">View details</a>
 
   </div>
