@@ -21,6 +21,7 @@ function renderSearchList() {
       <section class='baker-list card-group m-3'>
         ${renderSearchs()}
       </section>
+      <div><a onClick = "renderBakerList()">◀︎ Back to Home</a></div>
   `
 
   } else {
