@@ -6,8 +6,8 @@ function showReviews(bakerId) {
       bakerReviews(res)
       // state.bakerReviews = res
     })
-  
 }
+
 function bakerReviews(res) {
   // console.log(state.bakerReviews)
   return res.map(review => `  
