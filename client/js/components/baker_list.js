@@ -18,7 +18,7 @@ function renderPreLoginBakers() {
         <h5 class="card-title">${baker.name}</h5>
         <p class="card-text">${baker.address}</p>
         <p class="card-text"><small class="text-muted">${baker.specialty}</small></p> 
-        <a onClick="showReviews(${baker.id})">View details</a>
+        <a onClick="showReviews(${baker.id})">View Reviews</a>
         <a onClick="showBakerDetails(${baker.id})">View details</a>
     </div>
   </div>

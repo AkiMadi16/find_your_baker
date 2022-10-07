@@ -1,4 +1,4 @@
-function showReview(bakerId) {
+function showReviews(bakerId) {
   fetch(`/api/reviews/${bakerId}`)
     .then(res => res.json())
     .then(res => {

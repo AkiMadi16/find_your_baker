@@ -55,6 +55,6 @@ function reviewBaker(event) {
 function renderNote(message) {
   const page = document.querySelector('#page')
   page.innerHTML =
-    `<h2 style='color: rgb(129, 95, 95);'>${message}</h2>`
+    `<h2 class="text-center mt-3" style='color: rgb(129, 95, 95);'>${message}</h2>`
 }
 
