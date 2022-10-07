@@ -57,3 +57,4 @@ function renderNote(message) {
   page.innerHTML =
     `<h2 style='color: rgb(129, 95, 95);'>${message}</h2>`
 }
+

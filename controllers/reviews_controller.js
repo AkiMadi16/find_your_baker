@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
       const userName = user.name 
       Reviews
       .create(bakerId, review, userName)
-      .then(review => res.json({message: `Thank you for reviewing this baker, ${review.userName}!`}))
+      .then(review => res.json({message: `Thank you for reviewing this baker!`}))
   })
 })
 
