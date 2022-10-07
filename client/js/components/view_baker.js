@@ -23,7 +23,7 @@ function showBakerDetails(bakerId) {
   
 function renderViewBakerDetails(baker, map) {
   document.querySelector('#page').innerHTML = `
-  <section class='baker-details'>
+  <section class='baker-details container align-conter-center mx-auto'>
   <a onClick = "renderBakerList()">◀︎ Back to Home</a>
       <h2>${baker.name}</h2>
       <p>${baker.address}</p>
