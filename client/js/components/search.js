@@ -88,6 +88,7 @@ function renderSearchError() {
             <a onClick = "renderAddBaker()" class="card-link">Add Baker</a>
           </header>
           <div class="baker-list card-group m-3">${renderBakersForBaker()}</div>
+          <div><a onClick = "renderBakerList()">◀︎ Back to Home</a></div>
         </aside>
       </div>
       
