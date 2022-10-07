@@ -48,7 +48,12 @@ function review(event) {
   })
     .then(res => res.json())
     .then(res => {
-        console.log(res.message)
+      renderNote(res.message)
     })
 }
 
+function renderNote(message) {
+  const page = document.querySelector('#page')
+  page.innerHTML =
+    `<h2 style='color: rgb(129, 95, 95);'>${message}</h2>`
+}
