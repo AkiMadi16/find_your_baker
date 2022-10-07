@@ -13,12 +13,8 @@ router.post('/', (req, res) => {
       const userName = user.name 
       Reviews
       .create(bakerId, review, userName)
-      .then(yourReview => res.json(yourReview))
-
-      Rating
-      .create(bakerId, rating, userName)
-      .then(rating => res.json({message: `Thank you for reviewing this baker, ${rating.userName}!`}))
-   })
+      .then(review => res.json({message: `Thank you for reviewing this baker, ${review.userName}!`}))
   })
+})
 
 module.exports = router
