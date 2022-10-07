@@ -1,16 +1,24 @@
-function showReviews(bakerId) {
+function showReview(bakerId) {
   fetch(`/api/reviews/${bakerId}`)
     .then(res => res.json())
     .then(res => {
       console.log(res)
-      bakerReviews(res)
-      // state.bakerReviews = res
+      state.bakerReviews = res
+      renderBakerReviews()
     })
 }
 
-function bakerReviews(res) {
+function renderBakerReviews() {
+  document.querySelector('#page').innerHTML = `
+    <section >
+        ${bakerReviews()}
+    </section>
+`
+}
+
+function bakerReviews() {
   // console.log(state.bakerReviews)
-  return res.map(review => `  
+  return state.bakerReviews.map(review => `  
     <div class='baker card' >
     
     <div class="card-body">
