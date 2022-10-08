@@ -25,16 +25,17 @@
   <script defer src="/js/components/search.js"></script>
   <script defer src="/js/components/login_page.js"></script>
   <script defer src="/js/components/show_reviews.js"></script>
+  <script defer src="/js/components/show_rating.js"></script>
 </head>
 <body>
   <header class="container w-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light align-items-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light align-items-center py-1">
       <div class="container-fluid">
-        <a class="navbar-brand flex-grow-1 mb-0 p-0"  aria-current="page" onclick="renderBakerList()"><div class="logo"><img id="logo" src="./images/logo.png" alt=""></div></a>
+        <a class="navbar-brand flex-grow-1 mb-0"  aria-current="page" onclick="renderBakerList()"><div class="logo"><img id="logo" src="./images/logo.png" alt=""></div></a>
         <button class="navbar-toggler mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse align-items-center py-0" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" onclick="renderSignUp()">Sign Up</a>

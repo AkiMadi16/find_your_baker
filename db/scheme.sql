@@ -24,14 +24,8 @@ CREATE TABLE users(
 
 CREATE TABLE reviews(
   id SERIAL PRIMARY KEY,
-  baker_id numeric,
+  baker_id NUMERIC,
   review TEXT,
-  user_name TEXT
-);
-
-CREATE TABLE rating(
-  id SERIAL PRIMARY KEY,
-  baker_id numeric,
-  rating TEXT,
+  rating NUMERIC,
   user_name TEXT
 );
