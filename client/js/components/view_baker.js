@@ -9,7 +9,7 @@ function showBakerDetails(bakerId) {
     .then(res => res.json())
     .then(apiKey => {
       bingApiKey = apiKey;
-       return fetch(`http://dev.virtualearth.net/REST/v1/Locations?CountryRegion=AU&addressLine=${baker.address}&key=${apiKey}`)
+       return fetch(`https://dev.virtualearth.net/REST/v1/Locations?CountryRegion=AU&addressLine=${baker.address}&key=${apiKey}`)
     })
     .then(res => res.json())
     .then(res => {
