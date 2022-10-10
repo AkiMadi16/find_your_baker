@@ -72,6 +72,18 @@ const Baker = {
         console.log(dbRes.rows)
         return dbRes.rows
       })
+  },
+  findReviewedBakerById: (bakerId) => {
+    const sql = `
+      SELECT name FROM bakers
+      WHERE id = $1
+    `
+    return db 
+      .query(sql, [bakerId])
+      .then (dbRes => {
+        console.log(dbRes.rows)
+        return dbRes.rows[0]
+      })
   }
   }
 

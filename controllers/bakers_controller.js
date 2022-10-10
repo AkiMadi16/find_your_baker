@@ -76,6 +76,19 @@ router.get('/:loggedInEmail/baker', (req, res) => {
   
 })
 
+router.get('/:bakerId/find', (req, res) => {
+  const bakerId = req.params.bakerId
+  
+ 
+    Baker
+      .findReviewedBakerById(bakerId)
+      .then(bakers => {
+        console.log(bakers)
+        return res.json(bakers)
+      })
+  
+})
+
 
 module.exports = router
 

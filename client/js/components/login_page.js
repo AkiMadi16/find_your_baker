@@ -28,6 +28,7 @@ function renderLoginPage() {
           <h3>Hello ${state.loggedInName}</h3>
         </header>
         <div class="baker-list card-group m-3">${renderSweetTooth()}</div>
+        <div class="baker-list card-group m-3 each-user-review">${showEachUserReviews()}</div>
       </aside>
     </div>
     `

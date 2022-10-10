@@ -30,6 +30,15 @@ const Reviews = {
     return db
       .query(sql, [bakerId])
       .then(dbRes => dbRes.rows[0])
+  },
+  findEachUserReviews: (userName) => {
+    const sql = `
+      SELECT * FROM reviews 
+      WHERE user_name = $1    
+    `
+    return db
+      .query(sql, [userName])
+      .then(dbRes => dbRes.rows)
   }
   
 
