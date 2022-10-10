@@ -32,4 +32,15 @@ router.get('/:userName/eachUser', (req, res) => {
 
 })
 
+router.delete('/:id', (req, res) => {
+  const reviewId = req.params.id;
+
+    Reviews
+      .delete(reviewId)
+      .then(() => res.json({ message: 'delete'}))
+  
+})
+
+
+
 module.exports = router

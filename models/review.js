@@ -39,6 +39,12 @@ const Reviews = {
     return db
       .query(sql, [userName])
       .then(dbRes => dbRes.rows)
+  },
+  delete: reviewId => {
+      const sql = `
+          DELETE FROM reviews WHERE id = $1    
+      `
+      return db.query(sql, [reviewId])
   }
   
 
