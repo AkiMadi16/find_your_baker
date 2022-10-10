@@ -49,6 +49,10 @@ function reviewBaker(event) {
     .then(res => res.json())
     .then(res => {
       renderNote(res.message)
+      setTimeout(() => {
+        renderLoginPage()
+      }, 2500)
+      
     })
 }
 
