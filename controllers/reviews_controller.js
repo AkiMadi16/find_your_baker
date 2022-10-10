@@ -24,4 +24,12 @@ router.get('/:bakerId', (req, res) => {
 
 })
 
+router.get('/:userName/eachUser', (req, res) => {
+  const userName = req.params.userName
+  Reviews
+    .findEachUserReviews(userName)
+    .then(reviews => res.json(reviews))
+
+})
+
 module.exports = router

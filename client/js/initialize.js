@@ -5,6 +5,12 @@ const state = {
   loggedInName: null,
   bakersForBaker: []
 }
+const reviews = {
+  reviews: []
+
+}
+
+
 fetch('/api/bakers')
   .then(res => res.json())
   .then(bakers => {
