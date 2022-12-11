@@ -13,7 +13,6 @@ CREATE TABLE bakers(
     creator TEXT
 );
 
-
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
   name TEXT,

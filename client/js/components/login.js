@@ -36,12 +36,7 @@ function logIn(event) {
         renderLogin()
         renderError(res.error)
       } else {
-        const userName = res.email
-        const userType = res.type
-        const userRealName = res.name
-        console.log(userName)
-        console.log(userType)
-        console.log(userRealName)
+        const { userName, userType, userRealName} = res   
         state.loggedInEmail = userName
         state.loggedInUsertype = userType
         state.loggedInName = userRealName

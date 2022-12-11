@@ -2,14 +2,8 @@ function renderUpdateBaker(event) {
   const updateBtn = event.target
   const bakerDOM = updateBtn.closest('.baker')
 
-  const bakerId = bakerDOM.dataset.id
-  const bakerImg = bakerDOM.dataset.img
-  const bakerName = bakerDOM.dataset.name
-  const bakerAddress = bakerDOM.dataset.address
-  const bakerSuburb = bakerDOM.dataset.suburb
-  const bakerPostcode = bakerDOM.dataset.postcode
-  const bakerContact = bakerDOM.dataset.contact
-  const bakerSpecialty = bakerDOM.dataset.specialty
+  const { bakerId, bakerImg, bakerName, bakerAddress, bakerSuburb, bakerPostcode, bakerContact, bakerSpecialty } = bakerDOM.dataset
+
   console.log(bakerDOM.dataset)
  
 

@@ -36,7 +36,6 @@ function renderReview(bakerId) {
 }
 
 function reviewBaker(event) {
-   console.log('miao')
   event.preventDefault()
   const form = event.target;
   const data = Object.fromEntries(new FormData(form))

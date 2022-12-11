@@ -18,7 +18,6 @@ function renderPreLoginBakers() {
         <h5 class="card-title">${baker.name}</h5>
         <p class="card-text">${baker.address}</p>
         <p class="card-text"><small class="text-muted">${baker.specialty}</small></p> 
-        <a onClick = "showReview(${baker.id});showRating(${baker.id})" class="card-link">Show Reviews</a>
         <a onClick="showBakerDetails(${baker.id})">View details</a>
     </div>
   </div>
@@ -35,9 +34,7 @@ return state.bakers.map(baker => `
       <p class="card-text">${baker.contact}</p>
       <p class="card-text"><small class="text-muted">${baker.specialty}</small></p>
       <a onClick = "renderReview(${baker.id})" class="card-link">Review baker</a>
-      <a onClick = "showReview(${baker.id});showRating(${baker.id})" class="card-link">Show Reviews</a>
       <a onClick="showBakerDetails(${baker.id})">View details</a>
-
   </div>
 </div>
 `).join('')
