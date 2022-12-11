@@ -4,10 +4,6 @@ function renderUpdateBaker(event) {
 
   const { bakerId, bakerImg, bakerName, bakerAddress, bakerSuburb, bakerPostcode, bakerContact, bakerSpecialty } = bakerDOM.dataset
 
-  console.log(bakerDOM.dataset)
- 
-
-
   document.querySelector('#page').innerHTML = `
   <section class ="add-baker mx-auto mt-4" style="width: 340px;">
   <form onSubmit="updateBaker(event)" id="render-form">

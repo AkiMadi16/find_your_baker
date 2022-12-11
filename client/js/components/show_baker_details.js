@@ -81,7 +81,6 @@ function bakerReviews() {
     return  `  
     <div class='baker card' >
     <div class="card-body">
-      
         <h5 class="card-title">${review.user_name}</h5>
         <div class="d-inline-flex">
           <div class="stars-outer">
