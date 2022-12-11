@@ -48,7 +48,7 @@ function renderViewBakerDetails(baker, map) {
     const starPercentage = (bakerRating/ starTotal) * 100;
     const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
     document.querySelector('#page').innerHTML = `
-        <div class='baker-details container align-conter-center mx-auto'>
+        <div class='baker-details container align-conter-center mx-auto mb-3 mt-3'>
           <a onClick = "renderBakerList()">◀︎ Back to Home</a>
           <section>
             <h2>${baker.name}</h2>
