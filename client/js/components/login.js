@@ -1,5 +1,5 @@
 function renderLogin() {
-  document.querySelector('#page').innerHTML = `
+  document.querySelector("#page").innerHTML = `
   <section class ="login">
         <form onSubmit="logIn(event)" class="mx-auto mt-4" style="width: 340px;" id="render-form">
             <h3 class="text-center">Login</h3>
@@ -14,51 +14,51 @@ function renderLogin() {
         <button type="submit" class="btn btn-light border-secondary">Login</button>
     </form>
 </section>
-  `
+  `;
 }
 
 function logIn(event) {
-  event.preventDefault()
-  const form = event.target
+  event.preventDefault();
+  const form = event.target;
 
-  const data = Object.fromEntries(new FormData(form))
+  const data = Object.fromEntries(new FormData(form));
   // console.log(data)
-  
-  fetch('/api/sessions', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
+
+  fetch("/api/sessions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
   })
-    .then(res => res.json())
-    .then(res => {
-      console.log(res)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
       if (res.error) {
-        renderLogin()
-        renderError(res.error)
+        renderLogin();
+        renderError(res.error);
       } else {
-        const { userName, userType, userRealName} = res   
-        state.loggedInEmail = userName
-        state.loggedInUsertype = userType
-        state.loggedInName = userRealName
-        renderLoginPage()
+        const { userName, userType, userRealName } = res;
+        state.loggedInEmail = userName;
+        state.loggedInUsertype = userType;
+        state.loggedInName = userRealName;
+        renderLoginPage();
       }
-    })
+    });
 }
 
 function renderError(errorMessage) {
-  const page = document.querySelector('#page')
+  const page = document.querySelector("#page");
   page.innerHTML =
-    `<h2 style='color: rgb(129, 95, 95);'>${errorMessage}</h2>` + page.innerHTML
+    `<h2 style='color: rgb(129, 95, 95);'>${errorMessage}</h2>` +
+    page.innerHTML;
 }
 
 function logout() {
-  fetch('/api/sessions', {
-    method: 'DELETE'
-  })
-  .then(() => {
-    state.loggedInEmail = null
-    state.loggedInUsertype = null
-    state.loggedInName = null
-    renderBakerList()
-  })
+  fetch("/api/sessions", {
+    method: "DELETE",
+  }).then(() => {
+    state.loggedInEmail = null;
+    state.loggedInUsertype = null;
+    state.loggedInName = null;
+    renderBakerList();
+  });
 }

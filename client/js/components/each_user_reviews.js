@@ -1,57 +1,43 @@
 function showEachUserReviews() {
-  const userName = state.loggedInName
+  const userName = state.loggedInName;
 
   fetch(`/api/reviews/${userName}/eachUser`)
-    .then(res => res.json())
-    .then(res => {
-      console.log(res)
-      reviews.reviews = res
-      addBakerNameToReviews ()
-      
-    })
-    
+    .then((res) => res.json())
+    .then((res) => {
+      reviews.reviews = res;
+      addBakerNameToReviews();
+    });
 }
 
-
 function renderEachUserReviews() {
-  
-  document.querySelector('.each-user-review').innerHTML = `
-    
+  document.querySelector(".each-user-review").innerHTML = `
     <section >  
       ${userReviews()}
     </section>
-    
-`
-
+`;
 }
 
-
-
-function addBakerNameToReviews () {
-  reviews.reviews.forEach(review => {
+function addBakerNameToReviews() {
+  reviews.reviews.forEach((review) => {
     fetch(`/api/bakers/${review.baker_id}/find`)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res.name)
-        review.bakerName = res.name
-        
-        renderEachUserReviews()
-      })
-  })
-
-
+      .then((res) => res.json())
+      .then((res) => {
+        review.bakerName = res.name;
+        renderEachUserReviews();
+      });
+  });
 }
 
 function userReviews() {
-  console.log(reviews.reviews)
-  return reviews.reviews.map(review =>{
-    const starTotal = 5;
-    const starPercentage = ((review.rating)/ starTotal) * 100;
-    const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-    return ` 
+  return reviews.reviews
+    .map((review) => {
+      const starTotal = 5;
+      const starPercentage = (review.rating / starTotal) * 100;
+      const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+      return ` 
     <div class='baker card' data-id='${review.id}' data-review='${review.review}' data-rating='${review.rating}'>
       <div class="card-body">
-        <h5 class="card-title">${review.user_name}</h5>
+        <h5 class="card-title">${review.bakerName}</h5>
         <div class="d-inline-flex">
           <div class="stars-outer">
             <div class="stars-inner" style="width:${starPercentageRounded};"></div>
@@ -64,18 +50,19 @@ function userReviews() {
           <a onClick = "renderUpdateReview(event)" class="card-link">Update</a>
       </div>
     </div>
-  `}).join('')
+  `;
+    })
+    .join("");
 }
 
 function deleteAReview(event) {
   const deleteReviewBtn = event.target;
-  const reviewDOM = deleteReviewBtn.closest('.baker')
+  const reviewDOM = deleteReviewBtn.closest(".baker");
   const reviewId = reviewDOM.dataset.id;
   fetch(`/api/reviews/${reviewId}`, {
-    method: 'DELETE'
-  })
-    .then(() => {
-      reviews.reviews = reviews.reviews.filter(t => t.id != reviewId)
-      renderLoginPage()
-  }) 
+    method: "DELETE",
+  }).then(() => {
+    reviews.reviews = reviews.reviews.filter((t) => t.id != reviewId);
+    renderLoginPage();
+  });
 }
